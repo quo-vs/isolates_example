@@ -14,21 +14,16 @@ class _PerformancePageState extends State<PerformancePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Performance using Isolates'),
-      ),
-      body: Container(
-        color: Colors.white,
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              AnimationWidget(),
-              mainIsolateButton(),
-              secondaryIsolateButton(),
-            ],
-          ),
+    return Container(
+      color: Colors.white,
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            AnimationWidget(),
+            mainIsolateButton(),
+            secondaryIsolateButton(),
+          ],
         ),
       ),
     );

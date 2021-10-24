@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:isolates_sample/pages/performance_low_level.dart';
 import 'package:isolates_sample/pages/performance_page.dart';
 
 void main() {
@@ -16,7 +17,25 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const PerformancePage(),
+      home: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: const TabBar(
+              tabs: [
+                Tab(text: 'Isolates with compute()'),
+                Tab(text: 'Low level isolates'),
+              ],
+            ),
+          ),
+          body: const TabBarView(
+            children: [
+              PerformancePage(),
+              PerformanceLowLevelPage()
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
